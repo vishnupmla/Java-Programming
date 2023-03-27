@@ -1,23 +1,35 @@
-import java.util.Scanner;
 
-public class Complex{
-	public static void main(String args[])
-	{
-		Scanner sc = new Scanner(System.in);
-		int a1,a2,b1,b2;
-		System.out.println("Enter the first complex number (Integer part and complex part)");
-		a1 = sc.nextInt();
-		a2 = sc.nextInt();
-		System.out.println("The number is: "+a1+"+"+a2+"i");
-		
-		
-		System.out.println("Enter the second complex number (Integer part and complex number part)");
-		b1 = sc.nextInt();
-		b2 = sc.nextInt();
-		System.out.println("The number is: "+b1+"+"+b2+"i");
-		
-		System.out.println("The Sum of complex number = "+ (a1+b1) + " + "+ (a2+b2) +"i");
-		
 
-	}
+public class Complex {
+    int real,img;
+    Complex(int real, int img)
+    {
+        this.real = real;
+        this.img = img;
+    }
+
+    void display()
+    {
+        System.out.println("The Complex numbers is:");
+        System.out.println(this.real+"+"+this.img+"i");
+    }
+
+    void addition(Complex other)
+    {
+        int t1 = this.real+other.real;
+        int t2 =this.img+other.img;
+
+        System.out.println("The sum of complex number is");
+        System.out.println(t1+"+"+t2+"i");
+    }
+
+    public static void main(String args[])
+    {
+        Complex c1 = new Complex(3,4);
+        Complex c2 = new Complex(5, 2);
+        c1.display();
+        c2.display();
+        c1.addition(c2);
+        
+    }
 }
